@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BTEUP Smart Portal PRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #00f2fe; --bg: #0d0e14; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+        body { background: var(--bg); min-height: 100vh; display: flex; flex-direction: column; color: white; overflow-x: hidden; }
+        .container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 15px; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1); padding: 35px 20px; border-radius: 25px;
+            width: 100%; max-width: 400px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        }
+        h1 { font-size: 30px; background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 5px; }
+        .label-text { display: block; text-align: left; font-size: 11px; color: var(--accent); margin: 10px 0 5px 5px; text-transform: uppercase; letter-spacing: 1px; }
+        input, select {
+            width: 100%; padding: 16px; margin-bottom: 12px; background: rgba(0,0,0,0.4); border: 1.5px solid rgba(255,255,255,0.1);
+            border-radius: 14px; color: white; font-size: 15px; transition: 0.3s; appearance: none;
+        }
+        input:focus, select:focus { border-color: var(--accent); outline: none; background: rgba(0,0,0,0.6); }
+        button {
+            width: 100%; padding: 18px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border: none; border-radius: 14px; color: #000; font-weight: 700; font-size: 16px; cursor: pointer; margin-top: 10px;
+        }
+        footer { padding: 25px; text-align: center; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); }
+        footer p { font-size: 13px; opacity: 0.7; }
+        footer span { color: var(--accent); font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="glass-card">
+            <h1>BTEUP PRO RESULT CHECKER </h1>
+            <p style="opacity: 0.5; font-size: 13px; margin-bottom: 20px;">Universal Result Portal 2026</p>
+            <form action="/generate" method="POST">
+                <span class="label-text">Exam Type</span>
+                <select name="exam_type" required>
+                    <option value="Odd_Semester">Odd Sem (1, 3, 5)</option>
+                    <option value="Even_Semester">Even Sem (2, 4, 6)</option>
+                    <option value="Back_Paper">Back / Scrutiny</option>
+                    <option value="Special_Back">Special Back Paper</option>
+                </select>
+                <span class="label-text">Credentials</span>
+                <input type="text" name="enrollment" placeholder="Enrollment No (E2...)" required>
+                <input type="text" name="dob" placeholder="DOB (DD/MM/YYYY)" required>
+                <button type="submit">GENERATE REPORT</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>Developed with ❤️ by <span>Ayansh Kumar</span></p>
+        <p style="font-size: 10px; opacity: 0.3; margin-top: 5px;">Copyright ©️ 2026 | Secure Portal</p>
+    </footer>
+</body>
+</html>

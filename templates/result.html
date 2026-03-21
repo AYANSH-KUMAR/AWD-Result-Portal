@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Report</title>
+    <style>
+        body { background: #f4f6f9; padding: 15px; font-family: 'Outfit', sans-serif; }
+        .report-card { background: white; max-width: 800px; margin: auto; border-radius: 20px; padding: 25px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+        .header { display: flex; justify-content: space-between; border-bottom: 2px solid #00f2fe; padding-bottom: 10px; margin-bottom: 20px; }
+        .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { border: 1px solid #f1f1f1; padding: 12px; font-size: 13px; text-align: left; }
+        th { background: #f8f9fa; color: #333; font-weight: 600; }
+        .badge { display: inline-block; padding: 4px 10px; background: #e3f2fd; color: #1565c0; border-radius: 20px; font-size: 10px; font-weight: bold; margin-bottom: 10px; }
+        .btn-print { background: #000; color: #fff; padding: 10px 20px; border-radius: 10px; text-decoration: none; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="report-card">
+        <div class="header">
+            <h3>Result Statement</h3>
+            <a href="javascript:window.print()" class="btn-print">Print PDF</a>
+        </div>
+        <div class="badge">Source: {{ source }}</div>
+        <p style="margin-bottom: 15px; font-size: 14px;"><strong>Enrollment:</strong> {{ enroll }}</p>
+        <div class="table-wrapper">
+            {{ table_html|safe }}
+        </div>
+        <p style="text-align:center; font-size: 11px; color:#999; margin-top:20px;">This is a computer-generated statement.</p>
+    </div>
+</body>
+</html>
